@@ -18,13 +18,13 @@
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="shop.php">Shop</a>
+            <a class="nav-link" href="shop">Shop</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cart.php">Cart</a>
+            <a class="nav-link" href="cart">Cart</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
+            <a class="nav-link" href="login">Login</a>
           </li>
         </ul>
       </nav>
