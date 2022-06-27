@@ -18,12 +18,12 @@
           <?php foreach ($params['cart'] as $v): ?>
             <tr>
               <td class="product-thumbnail">
-                <a href="product.php">
+                <a href="product">
                   <img src="<?php echo $params['imgDir'], $v['img']; ?>" alt="<?php echo $v['title']; ?>" />
                 </a>
               </td>
               <td>
-                <a href="product.php"><?php echo $v['title']; ?></a>
+                <a href="product"><?php echo $v['title']; ?></a>
               </td>
               <td class="product-price">$<?php echo $v['price']; ?></td>
               <td class="product-qty">

@@ -7,4 +7,5 @@ error_reporting(E_ALL);
 
 define('ROOT', dirname(__DIR__, 2).'/');
 define('CONFIGS', ROOT.'app/configs/');
-define('CLASSES', ROOT.'/app/classes/');
+define('CLASSES', ROOT.'app/classes/');
+define('LOG', ROOT.'var/log');
