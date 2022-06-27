@@ -1,6 +1,7 @@
 <?php
 
 use App\Exceptions\FileNotFoundException;
+use App\Store;
 use App\TemplateEngine;
 
 require '../app/configs/config.php';
@@ -16,6 +17,8 @@ try {
     echo $e->getMessage();
 }
 $cart = include $dbFilePath;
+$store = new Store($cart);
+$good = $store->takeGood('1');
 $imgDir = 'img/small/';
 $params = ['imgDir' => $imgDir, 'cart' => $cart];
 $obj = new TemplateEngine();
