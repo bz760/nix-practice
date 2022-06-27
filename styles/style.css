@@ -1,0 +1,210 @@
+/*-------------------------------------------------------Common-------------------------------------------------------*/
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.breadcrumbs {
+  text-align: center;
+  margin-bottom: 45px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  background-color: #f6f6f6;
+}
+.submit {
+  padding: 13px 30px;
+  background-color: #f2f2f2;
+  border: medium none;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.submit:hover {
+  color: #fff;
+  background-color: #f44;
+}
+
+/*-------------------------------------------------------Header-------------------------------------------------------*/
+
+.wrapper {
+  width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #1f2226;
+  font-family: sans-serif;
+}
+.header {
+  display: flex;
+  height: 100px;
+  padding-left: 20px;
+}
+.logo {
+  display: flex;
+  margin-right: 120px;
+}
+.logo-img {
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #000;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 420px;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.nav-link {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+}
+
+/*-------------------------------------------------------Home---------------------------------------------------------*/
+
+.title {
+  margin-bottom: 45px;
+  text-align: center;
+}
+.bold-title {
+  color: #ff0000;
+}
+.home-images {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*-------------------------------------------------------Product------------------------------------------------------*/
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.product {
+  width: 300px;
+  height: 430px;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+}
+.product-img {
+  display: block;
+  max-width: 269px;
+}
+.product-text {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.product-link {
+  color: #444444;
+  font-size: 18px;
+  text-decoration: none;
+}
+.product-details {
+  display: flex;
+}
+.product-details-text {
+  width: 550px;
+  line-height: 28px;
+}
+.product-details-item {
+  list-style-type: "- ";
+}
+
+/*-------------------------------------------------------Cart---------------------------------------------------------*/
+
+.cart-title {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.cart-form {
+  border: 1px solid #ebebeb;
+}
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cart-table th {
+  padding: 21px 45px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+.cart-table td {
+  font-size: 16px;
+  text-align: center;
+}
+.cart-table td a {
+  color: #1f2226;
+  text-decoration: none;
+}
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.counter-btn {
+  width: 20px;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+}
+.counter-input {
+  width: 70px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+}
+.cart-form .submit {
+  float: right;
+}
+
+/*-------------------------------------------------------Login-------------------------------------------------------*/
+
+.login-title {
+  margin-bottom: 40px;
+  color: #ff3535;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+.login-form {
+  width: 500px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px;
+  box-shadow: 0 0 6px rgb(0 0 0 / 10%);
+}
+.login-form [type="text"],
+.login-form [type="password"] {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid #ebebeb;
+  font-size: 15px;
+}
+.login-options {
+  margin-bottom: 20px;
+}
+
+/*-------------------------------------------------------Footer-------------------------------------------------------*/
+
+.footer {
+  padding-top: 20px;
+}
+.copyright {
+  text-align: center;
+}
