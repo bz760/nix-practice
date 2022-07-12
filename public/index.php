@@ -1,29 +1,28 @@
 <?php
 
+declare(strict_types=1); // включити режим суворої типізації
+
 use App\Controller\ErrorController;
-use App\ExampleService;
-use App\Exceptions\FrameworkException;
-use App\FileLogger;
-use App\Router\Router;
+use Framework\Exception\FrameworkException;
+use Framework\Entity\Router;
 
-require '../app/configs/config.php';
-require ROOT.'app/functions/debug.php';
-require ROOT.'app/functions/errorHandler.php';
-require ROOT.'app/functions/autoload.php';
-require ROOT.'app/functions/fileSystem.php';
+ini_set('display_errors', '1');
+ini_set('html_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
-$logger = new FileLogger();
-$service = new ExampleService($logger);
-$service->doSomeAction();
+require '../config/config.php';
+require ROOT.'vendor/autoload.php';
+require ROOT.'framework/Helper/errorHandler.php';
+require ROOT.'framework/Helper/functions.php';
 
 try {
     $router = new Router($_SERVER['REQUEST_URI']);
     $router->run();
-    $controller = new $router->controller;
+    $controller = new $router->controller();
     $action = $router->action;
     $controller->$action();
 } catch (FrameworkException $e) {
     $controller = new ErrorController();
     $controller->notFound();
-} catch (Exception $e) {
 }
