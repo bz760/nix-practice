@@ -1,9 +1,9 @@
 <?php
 
-namespace Framework\Entity;
+namespace Framework\library;
 
-use Framework\Psr\Log\LoggerInterface;
-use Framework\Psr\Log\LogLevel;
+use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
 
 class FileLogger implements LoggerInterface
 {
@@ -11,7 +11,7 @@ class FileLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function emergency(string $message, array $context = array())
+    public function emergency($message, array $context = array())
     {
         $this->log(LogLevel::EMERGENCY, $message, $context);
     }
@@ -19,7 +19,7 @@ class FileLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function alert(string $message, array $context = array())
+    public function alert($message, array $context = array())
     {
         $this->log(LogLevel::ALERT, $message, $context);
     }
@@ -27,7 +27,7 @@ class FileLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function critical(string $message, array $context = array())
+    public function critical($message, array $context = array())
     {
         $this->log(LogLevel::CRITICAL, $message, $context);
     }
@@ -35,7 +35,7 @@ class FileLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function error(string $message, array $context = array())
+    public function error($message, array $context = array())
     {
         $this->log(LogLevel::ERROR, $message, $context);
     }
@@ -43,7 +43,7 @@ class FileLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function warning(string $message, array $context = array())
+    public function warning($message, array $context = array())
     {
         $this->log(LogLevel::WARNING, $message, $context);
     }
@@ -51,7 +51,7 @@ class FileLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function notice(string $message, array $context = array())
+    public function notice($message, array $context = array())
     {
         $this->log(LogLevel::NOTICE, $message, $context);
     }
@@ -59,7 +59,7 @@ class FileLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function info(string $message, array $context = array())
+    public function info($message, array $context = array())
     {
         $this->log(LogLevel::INFO, $message, $context);
     }
@@ -67,7 +67,7 @@ class FileLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function debug(string $message, array $context = array())
+    public function debug($message, array $context = array())
     {
         $this->log(LogLevel::DEBUG, $message, $context);
     }
@@ -75,11 +75,11 @@ class FileLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function log($level, string $message, array $context = array())
+    public function log($level, $message, array $context = array())
     {
         $date = date('Y-m-d H:i:s');
         $contextStr = !empty($context) ? json_encode($context) : null;
         $text = $date.' '.$level.' '.$message.' '.$contextStr.PHP_EOL;
-        file_put_contents(ROOT.'var/log', $text, FILE_APPEND | LOCK_EX);
+        file_put_contents(ROOT.'var/log.log', $text, FILE_APPEND | LOCK_EX);
     }
 }

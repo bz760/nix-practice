@@ -2,10 +2,13 @@
 
 return [
     // request - ctrl/action
-    'notFound' => 'error/notFound',
     'index' => 'main/index',
     'shop' => 'main/shop',
     'product' => 'main/product',
     'cart' => 'main/cart',
-    'login' => 'main/login'
+
+    'login' => 'auth/login',
+    'cabinet' => 'auth/cabinet',
+    'auth' => 'auth/auth',
+    'logout' => 'auth/logout'
 ];
