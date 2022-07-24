@@ -1,28 +1,24 @@
 <?php
 
-declare(strict_types=1); // включити режим суворої типізації
+declare(strict_types=1); // enable strong typing mode
 
-use App\Controller\ErrorController;
-use Framework\Exception\FrameworkException;
-use Framework\Entity\Router;
+use Framework\core\Router;
+use Framework\library\Session;
 
+error_reporting(E_ALL);
 ini_set('display_errors', '1');
 ini_set('html_errors', '1');
 ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
 
 require '../config/config.php';
-require ROOT.'vendor/autoload.php';
-require ROOT.'framework/Helper/errorHandler.php';
-require ROOT.'framework/Helper/functions.php';
+require '../vendor/autoload.php';
+require '../framework/helper/error.php';
+require '../framework/helper/function.php';
 
-try {
-    $router = new Router($_SERVER['REQUEST_URI']);
-    $router->run();
-    $controller = new $router->controller();
-    $action = $router->action;
-    $controller->$action();
-} catch (FrameworkException $e) {
-    $controller = new ErrorController();
-    $controller->notFound();
-}
+$session = new Session();
+$session->start(); // start a new or resume an existing one
+$router = new Router($_SERVER['REQUEST_URI']);
+$router->run();
+$controller = new $router->controller();
+$action = $router->action;
+$controller->$action();

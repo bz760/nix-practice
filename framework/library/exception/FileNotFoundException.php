@@ -2,9 +2,7 @@
 
 namespace Framework\Exception;
 
-use RuntimeException;
-
-class FileNotFoundException extends RuntimeException
+class FileNotFoundException extends \RuntimeException
 {
     public function errorMessage(): string
     {

@@ -1,15 +1,19 @@
 <?php
 
-namespace Framework\Entity;
+namespace Framework\core;
 
-use Framework\Exception\FileNotFoundException;
-use ParseError;
+use Framework\exception\FileNotFoundException;
 
-class TemplateEngine
+class View
 {
-    public function renderTemplate(string $template, array $params = [], string $layout = 'layout')
+    /**
+     * @param string $template
+     * @param array $p Parameters
+     * @param string $layout
+     */
+    public function render(string $template, array $p = [], string $layout = 'layout')
     {
-        extract($params);
+        extract($p);
         ob_start();
         $tplPath = ROOT.'app/view/template/'.$template.'.php';
         try {
@@ -22,8 +26,8 @@ class TemplateEngine
         } catch (FileNotFoundException $e) {
             $e->errorMessage();
             ob_end_clean();
-            exit();
-        } catch (ParseError $e) {
+            exit;
+        } catch (\ParseError $e) {
             echo 'ParseError: '.$e->getMessage();
         }
     }

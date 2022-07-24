@@ -1,9 +1,9 @@
 <?php
 
-namespace Framework\Psr\Log;
+namespace Psr\Log;
 
 /**
- * Describes log levels.
+ * Describes var levels.
  */
 class LogLevel
 {
