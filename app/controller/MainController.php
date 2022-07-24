@@ -8,12 +8,10 @@ use Framework\core\View;
 class MainController
 {
     private View $view;
-    private Product $product;
 
     public function __construct()
     {
         $this->view = new View();
-        $this->product = new Product();
     }
 
     public function index()
@@ -23,25 +21,32 @@ class MainController
 
     public function shop()
     {
-        $products = $this->product->readAll();
-        $this->view->render('shop', ['imgDir' => 'img/middle/', 'products' => $products]);
+        $this->view->render('shop', ['imgDir' => 'img/middle/']);
     }
 
     public function product()
     {
-        $product = $this->product->read(0);
-        $this->view->render('product', ['imgDir' => 'img/large/', 'product' => $product]);
+        $product = new Product();
+        $data = $product->read(0);
+        $this->view->render('product', ['imgDir' => 'img/large/', 'product' => $data]);
     }
 
     public function cart()
     {
-        $productIds = [0, 1];
-        $cart = [];
+        $this->view->render('cart', ['imgDir' => 'img/small/']);
+    }
 
-        foreach ($productIds as $id) {
-            $cart[$id] = $this->product->read($id);
+    public function getProducts()
+    {
+        $product = new Product();
+        $data = $product->readAll();
+        $json = [];
+
+        foreach ($data as $v) {
+            $json[] = $v;
         }
 
-        $this->view->render('cart', ['imgDir' => 'img/small/', 'cart' => $cart]);
+        $json = json_encode($json);
+        echo $json;
     }
 }

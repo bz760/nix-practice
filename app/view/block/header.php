@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <title>Main page</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <script defer type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
   <div class="wrapper">
