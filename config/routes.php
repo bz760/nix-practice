@@ -6,6 +6,7 @@ return [
     'shop' => 'main/shop',
     'product' => 'main/product',
     'cart' => 'main/cart',
+    'getProducts' => 'main/getProducts',
 
     'login' => 'auth/login',
     'cabinet' => 'auth/cabinet',

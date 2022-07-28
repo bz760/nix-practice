@@ -14,11 +14,11 @@
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($p['cart'] as $v): ?>
+          <?php foreach ($p['products'] as $v): ?>
           <tr>
             <td class="product-thumbnail">
               <a href="product">
-                <img src="<?php echo $p['imgDir'], $v->img; ?>" alt="<?php echo $v->name; ?>">
+                <img src="img/small/<?php echo $v->img; ?>" alt="<?php echo $v->name; ?>">
               </a>
             </td>
             <td>
