@@ -14,6 +14,30 @@
           </tr>
         </thead>
         <tbody>
+          <?php foreach ($p['products'] as $v): ?>
+          <tr>
+            <td class="product-thumbnail">
+              <a href="product">
+                <img src="img/small/<?php echo $v->img; ?>" alt="<?php echo $v->name; ?>">
+              </a>
+            </td>
+            <td>
+              <a href="product"><?php echo $v->name; ?></a>
+            </td>
+            <td class="product-price">$<?php echo $v->price; ?></td>
+            <td class="product-qty">
+              <div class="counter">
+                <div class="counter-btn">-</div>
+                <input class="counter-input" name="counter-1" type="text" value="2">
+                <div class="counter-btn">+</div>
+              </div>
+            </td>
+            <td>
+              <a href="#">Edit</a>
+              <a href="#">Remove</a>
+            </td>
+          </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
       <button class="submit" type="submit">PROCEED TO CHECKOUT</button>

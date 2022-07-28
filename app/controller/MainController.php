@@ -33,7 +33,15 @@ class MainController
 
     public function cart()
     {
-        $this->view->render('cart', ['imgDir' => 'img/small/']);
+        $product = new Product();
+        $ids = [0, 1];
+        $data = [];
+
+        foreach ($ids as $v) {
+            $data[] = $product->read($v);
+        }
+
+        $this->view->render('cart', ['imgDir' => 'img/small/', 'products' => $data]);
     }
 
     public function getProducts()
